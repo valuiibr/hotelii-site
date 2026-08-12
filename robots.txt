@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hotelii.com.br/sitemap.xml
