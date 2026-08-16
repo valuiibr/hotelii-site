@@ -96,7 +96,7 @@
     $("prev").addEventListener("click",()=>{if(current){current--;render()}});$("backToQuiz").addEventListener("click",()=>{gate.classList.remove("active");quiz.classList.add("active");render()});
     $("gate").addEventListener("submit",e=>{e.preventDefault();if(!gate.checkValidity()){gate.classList.add("was-validated");$("gateError").classList.add("show");gate.querySelector(":invalid")?.focus();return}$("gateError").classList.remove("show");showResult()});
     $("phone").addEventListener("input",e=>{let v=e.target.value.replace(/\D/g,"").slice(0,11);if(v.length>2)v=`(${v.slice(0,2)}) ${v.slice(2)}`;if(v.length>10)v=`${v.slice(0,10)}-${v.slice(10)}`;else if(v.length>9)v=`${v.slice(0,9)}-${v.slice(9)}`;e.target.value=v});
-    $("print").addEventListener("click",()=>window.print());$("restart").addEventListener("click",()=>{answers.fill(null);current=0;result.classList.remove("active");intro.style.display="block";window.scrollTo({top:0,behavior:"smooth"})});$("year").textContent=new Date().getFullYear();
+    $("print").addEventListener("click",()=>window.print());$("restart").addEventListener("click",()=>{answers.fill(null);current=0;result.classList.remove("active");intro.style.display="block";window.scrollTo({top:0,behavior:"smooth"})});if($("year"))$("year").textContent=new Date().getFullYear();
   })();
   </script>
 </body>
